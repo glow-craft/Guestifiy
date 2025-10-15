@@ -345,18 +345,25 @@ footer {
     padding-top: 3px !important;
   }
 }
-/* ✅ MOBILE BACKGROUND FIX */
+/* ✅ FINAL MOBILE BACKGROUND FIX */
 @media (max-width: 768px) {
   body {
+    background-attachment: scroll !important; /* mobile fix */
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
     background-size: cover !important;
-    background-attachment: fixed !important;
-    background-position: center center !important;
     overflow-x: hidden !important;
+    overflow-y: auto !important;
   }
 
   html, body {
     max-width: 100% !important;
     overflow-x: hidden !important;
   }
+
+  * {
+    -webkit-text-size-adjust: none !important; /* stops mobile zoom-in bug */
+  }
 }
+
 
