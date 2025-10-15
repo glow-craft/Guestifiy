@@ -345,37 +345,22 @@ footer {
     padding-top: 3px !important;
   }
 }
-/* ✅ UNIVERSAL MOBILE BACKGROUND FIX */
+/* ✅ DESKTOP DEFAULT BACKGROUND */
 body {
-  position: relative;
-  overflow-x: hidden;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('../bg.jpg') no-repeat center center;
+  background: url('../bg-desktop.jpg') no-repeat center center fixed;
   background-size: cover;
   background-color: #000;
-  z-index: -1;
+  color: white;
+  min-height: 100vh;
+  backdrop-filter: blur(3px);
 }
 
-/* For Mobile: remove zoom + stop scroll issues */
+/* ✅ MOBILE BACKGROUND (different image, smooth scroll-friendly) */
 @media (max-width: 768px) {
-  html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-text-size-adjust: none;
-  }
-
-  body::before {
-    background-attachment: scroll;
-    background-position: center top;
+  body {
+    background: url('../bg-mobile.jpg') no-repeat center center;
     background-size: cover;
+    background-attachment: scroll; /* no fixed to avoid zoom issue */
+    background-color: #000;
   }
 }
