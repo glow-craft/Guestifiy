@@ -347,7 +347,7 @@ footer {
 }
 /* ✅ DESKTOP DEFAULT BACKGROUND */
 body {
-  background: url('../bg-desktop.jpg') no-repeat center center fixed;
+  background: url('../bg.jpg') no-repeat center center fixed;
   background-size: cover;
   background-color: #000;
   color: white;
@@ -364,3 +364,4 @@ body {
     background-color: #000;
   }
 }
+
