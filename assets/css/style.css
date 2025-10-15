@@ -6,16 +6,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-body {
-  background: url('../bg.jpg') no-repeat center center fixed;
-  background-size: cover;
-  background-color: #000;
-  color: white;
-  min-height: 100vh;
-  backdrop-filter: blur(3px);
-  padding-top: 65px; /* ✅ balanced spacing below nav */
-}
-
 /* Navigation */
 nav {
   position: fixed;
@@ -366,4 +356,5 @@ body {
     background-color: #000 !important;
   }
 }
+
 
