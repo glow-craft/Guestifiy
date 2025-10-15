@@ -8,35 +8,45 @@
 
 body {
   background: url('../bg.jpg') no-repeat center center fixed;
-  background-size: 120%;
+  background-size: cover;
   background-color: #000;
   color: white;
   min-height: 100vh;
   backdrop-filter: blur(3px);
+  padding-top: 65px; /* ✅ balanced spacing below nav */
 }
-
 
 /* Navigation */
 nav {
   position: fixed;
-  top: 20px;
+  top: 0;
+  left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 20px;
-  z-index: 1000;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 12px 0;
+  z-index: 9999;
+  backdrop-filter: blur(14px);
+  background: rgba(0, 0, 0, 0.45);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .glass-btn {
   backdrop-filter: blur(12px);
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 10px 25px;
-  border-radius: 25px;
+  padding: 8px 16px;
+  border-radius: 20px;
   color: white;
   text-decoration: none;
   font-weight: 500;
+  font-size: 0.9rem;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .glass-btn:hover {
@@ -56,6 +66,7 @@ nav {
   margin: auto;
   text-align: center;
   box-shadow: 0 0 25px rgba(255,255,255,0.15);
+  margin-top: 90px;
 }
 
 /* Profile Layout */
@@ -92,66 +103,46 @@ nav {
   background-image: url('../qrcode.png');
 }
 
+/* Animations */
 @keyframes rgbGlow {
   0% { box-shadow: 0 0 20px red, 0 0 40px blue, 0 0 80px purple; }
   50% { box-shadow: 0 0 25px green, 0 0 50px cyan, 0 0 90px magenta; }
   100% { box-shadow: 0 0 20px blue, 0 0 40px violet, 0 0 80px red; }
 }
 
+/* Titles */
 .guestify-title {
   font-family: "Pacifico", cursive;
   font-size: 3.4rem;
   color: #fff;
   text-shadow: 0 0 15px rgba(255,255,255,0.8);
-  margin: 0;
-  padding: 0;
   line-height: 1;
   animation: whiteGlow 2.5s ease-in-out infinite alternate;
 }
 
 /* ✨ Glow Animation */
 @keyframes whiteGlow {
-  0% {
-    text-shadow: 
-      0 0 10px rgba(255,255,255,0.6),
-      0 0 20px rgba(255,255,255,0.3),
-      0 0 30px rgba(255,255,255,0.1);
-  }
-  50% {
-    text-shadow: 
-      0 0 20px rgba(255,255,255,0.8),
-      0 0 40px rgba(255,255,255,0.5),
-      0 0 60px rgba(255,255,255,0.3);
-  }
-  100% {
-    text-shadow: 
-      0 0 15px rgba(255,255,255,0.7),
-      0 0 30px rgba(255,255,255,0.4),
-      0 0 50px rgba(255,255,255,0.2);
-  }
+  0% { text-shadow: 0 0 10px rgba(255,255,255,0.6), 0 0 20px rgba(255,255,255,0.3), 0 0 30px rgba(255,255,255,0.1); }
+  50% { text-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.5), 0 0 60px rgba(255,255,255,0.3); }
+  100% { text-shadow: 0 0 15px rgba(255,255,255,0.7), 0 0 30px rgba(255,255,255,0.4), 0 0 50px rgba(255,255,255,0.2); }
 }
 
 .subtitle {
-  font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
-  color: #fff;
   text-shadow: 0 0 15px rgba(255,255,255,0.8);
   opacity: 0.8;
-  margin: 0;
-  padding: 0;
-  line-height: 1; /* <- reduce space */
+  line-height: 1;
   text-align: center;
   font-weight: 600;
 }
 
-/* Tagline + Icons */
+/* Tagline */
 .tagline {
   margin-bottom: 10px;
   font-size: 1.22rem;
-  opacity: 1;
   font-weight: 700;
-line-height: 0.3;
-font-family: 'Montserrat', sans-serif;
+  line-height: 1.2;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .icon {
@@ -159,20 +150,11 @@ font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
 }
 
-a {
-  color: #fff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
 /* Services */
 .services {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* box width kam */
-  gap: 20px; /* thoda kam gap */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
   margin-top: 30px;
 }
 
@@ -180,7 +162,7 @@ a:hover {
   background: rgba(255,255,255,0.1);
   border-radius: 12px;
   backdrop-filter: blur(8px);
-  padding: 10px; /* andar ka size kam */
+  padding: 10px;
   transition: 0.3s;
 }
 
@@ -192,13 +174,13 @@ a:hover {
 .service-box img {
   width: 100%;
   border-radius: 8px;
+  height: auto;
 }
-
 
 /* Rate List */
 iframe {
   width: 100%;
-  height: 600px;
+  height: 70vh;
   border: none;
   border-radius: 10px;
   margin-top: 20px;
@@ -208,7 +190,8 @@ iframe {
 .contact-icons {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  flex-wrap: wrap;
+  gap: 20px;
   margin-top: 25px;
 }
 
@@ -242,49 +225,7 @@ footer {
   text-align: center;
 }
 
-.glass-box {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
-  padding: 15px 25px;
-  border-radius: 20px;
-  margin: 10px 0;
-  color: #fff;
-}
-
-/* === Spacing Adjustment === */
-nav {
-  margin-bottom: 30px; /* Navigation ke niche extra space */
-}
-
-#profile {
-  padding-top: 100px; /* Profile section ke upar space barhao */
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .profile-row {
-    flex-direction: column;
-  }
-}
-
-/* Sticky Navigation Always on Top */
-nav {
-  position: fixed;    
-  top: 0;              
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  padding: 15px 0;
-  z-index: 9999;
-  backdrop-filter: blur(14px);
-  background: rgba(0, 0, 0, 0.35);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-/* ===== VCard Button Style ===== */
+/* VCard Button */
 .download-vcard {
   margin-top: 14px;
   text-align: center;
@@ -298,9 +239,7 @@ nav {
   border-radius: 10px;
   color: white;
   font-weight: 600;
-  font-size: 0.6rem;
-  border-radius: 6px;
-  letter-spacing: 0.5px;
+  font-size: 0.7rem;
   text-decoration: none;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
@@ -311,58 +250,98 @@ nav {
   transform: scale(1.07);
 }
 
-/* Responsive Fix for Mobile */
+/* ✅ MOBILE VIEW FIX */
 @media (max-width: 768px) {
-  /* Adjust overall layout */
+  nav {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 6px;
+    padding: 8px 5px;
+    overflow-x: auto;
+  }
+
+  .glass-btn {
+    font-size: 0.7rem;
+    padding: 5px 10px;
+    border-radius: 12px;
+  }
+
   body {
-    padding: 0 10px;
-    overflow-x: hidden;
+    padding-top: 65px; /* ✅ keeps perfect alignment */
   }
 
-  header nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-  }
-
-  .services {
-    grid-template-columns: 1fr; /* Single column on small screens */
-    gap: 15px;
-  }
-
-  .service-box {
-    padding: 10px;
-  }
-
-  .hero-content {
-    text-align: center;
+  .glass-section {
+    width: 95%;
     padding: 20px;
-  }
-
-  .hero-content img {
-    width: 90%;
-    max-width: 300px;
-    margin: 0 auto;
+    margin-top: 70px;
   }
 
   .guestify-title {
     font-size: 2.2rem;
   }
 
-  .btn {
-    padding: 8px 16px;
-    font-size: 0.9rem;
+  .subtitle {
+    font-size: 0.7rem;
   }
 
-  footer {
-    text-align: center;
-    padding: 20px;
+  .profile-row {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .profile-pic, .qr {
+    width: 150px;
+    height: 150px;
+    margin-top: 10px;
+  }
+
+  iframe {
+    height: 55vh;
+  }
+
+  .contact-icons a {
+    width: 45px;
+    height: 45px;
+  }
+
+  .download-vcard a {
+    font-size: 0.65rem;
+    padding: 8px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .guestify-title {
+    font-size: 1.8rem;
+  }
+
+  .profile-pic, .qr {
+    width: 120px;
+    height: 120px;
+  }
+
+  .glass-section {
+    padding: 15px;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  iframe {
+    height: 50vh;
+  }
+}
+/* ✅ FIX EXTRA SPACE BELOW NAVIGATION */
+@media (max-width: 768px) {
+  body {
+    padding-top: 3px !important;
+  }
+}
+
+@media (min-width: 769px) {
+  body {
+    padding-top: 3px !important;
   }
 }
