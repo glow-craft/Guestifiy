@@ -1,0 +1,313 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: url('../bg.jpg') no-repeat center center fixed;
+  background-size: 120%;
+  background-color: #000;
+  color: white;
+  min-height: 100vh;
+  backdrop-filter: blur(3px);
+}
+
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  z-index: 1000;
+}
+
+.glass-btn {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 25px;
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Glass Section */
+.glass-section {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px;
+  width: 85%;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(255,255,255,0.15);
+}
+
+/* Profile Layout */
+.profile-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.profile-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 300px;
+  flex-wrap: wrap;
+}
+
+.profile-pic, .qr {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  animation: rgbGlow 3s infinite alternate ease-in-out;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  background-image: url('../profile.jpg');
+}
+
+.qr {
+  background-image: url('../qrcode.png');
+}
+
+@keyframes rgbGlow {
+  0% { box-shadow: 0 0 20px red, 0 0 40px blue, 0 0 80px purple; }
+  50% { box-shadow: 0 0 25px green, 0 0 50px cyan, 0 0 90px magenta; }
+  100% { box-shadow: 0 0 20px blue, 0 0 40px violet, 0 0 80px red; }
+}
+
+.guestify-title {
+  font-family: "Pacifico", cursive;
+  font-size: 3.4rem;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(255,255,255,0.8);
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  animation: whiteGlow 2.5s ease-in-out infinite alternate;
+}
+
+/* ✨ Glow Animation */
+@keyframes whiteGlow {
+  0% {
+    text-shadow: 
+      0 0 10px rgba(255,255,255,0.6),
+      0 0 20px rgba(255,255,255,0.3),
+      0 0 30px rgba(255,255,255,0.1);
+  }
+  50% {
+    text-shadow: 
+      0 0 20px rgba(255,255,255,0.8),
+      0 0 40px rgba(255,255,255,0.5),
+      0 0 60px rgba(255,255,255,0.3);
+  }
+  100% {
+    text-shadow: 
+      0 0 15px rgba(255,255,255,0.7),
+      0 0 30px rgba(255,255,255,0.4),
+      0 0 50px rgba(255,255,255,0.2);
+  }
+}
+
+.subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(255,255,255,0.8);
+  opacity: 0.8;
+  margin: 0;
+  padding: 0;
+  line-height: 1; /* <- reduce space */
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Tagline + Icons */
+.tagline {
+  margin-bottom: 10px;
+  font-size: 1.22rem;
+  opacity: 1;
+  font-weight: 700;
+line-height: 0.3;
+font-family: 'Montserrat', sans-serif;
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Services */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* box width kam */
+  gap: 20px; /* thoda kam gap */
+  margin-top: 30px;
+}
+
+.service-box {
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  padding: 10px; /* andar ka size kam */
+  transition: 0.3s;
+}
+
+.service-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+.service-box img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+
+/* Rate List */
+iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* Contact Icons */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.contact-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  transition: 0.3s;
+}
+
+.contact-icons a img {
+  width: 24px;
+  height: 24px;
+}
+
+.contact-icons a:hover {
+  background: rgba(255,255,255,0.3);
+  box-shadow: 0 0 20px rgba(255,255,255,0.7);
+}
+
+/* Footer */
+footer {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.glass-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  padding: 15px 25px;
+  border-radius: 20px;
+  margin: 10px 0;
+  color: #fff;
+}
+
+/* === Spacing Adjustment === */
+nav {
+  margin-bottom: 30px; /* Navigation ke niche extra space */
+}
+
+#profile {
+  padding-top: 100px; /* Profile section ke upar space barhao */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-row {
+    flex-direction: column;
+  }
+}
+
+/* Sticky Navigation Always on Top */
+nav {
+  position: fixed;    
+  top: 0;              
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 15px 0;
+  z-index: 9999;
+  backdrop-filter: blur(14px);
+  background: rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+/* ===== VCard Button Style ===== */
+.download-vcard {
+  margin-top: 14px;
+  text-align: center;
+}
+
+.download-vcard a {
+  display: inline-block;
+  padding: 10px 22px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.6rem;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.download-vcard a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.07);
+}
+
