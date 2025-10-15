@@ -345,3 +345,18 @@ footer {
     padding-top: 3px !important;
   }
 }
+/* ✅ MOBILE BACKGROUND FIX */
+@media (max-width: 768px) {
+  body {
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    background-position: center center !important;
+    overflow-x: hidden !important;
+  }
+
+  html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+}
+
