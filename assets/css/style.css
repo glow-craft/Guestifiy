@@ -347,7 +347,7 @@ footer {
 }
 /* 💻 Default (Desktop) Background */
 body {
-  background-image: url('bg.jpg');
+  background-image: url('assets/bg.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -358,7 +358,7 @@ body {
 /* 📱 Mobile Background */
 @media (max-width: 768px) {
   body {
-    background-image: url('bg-mobile.jpg') !important;
+    background-image: url('assets/bg-mobile.jpg') !important;
     background-repeat: no-repeat !important;
     background-position: center center !important;
     background-size: cover !important;
@@ -366,3 +366,4 @@ body {
     background-color: #000 !important;
   }
 }
+
