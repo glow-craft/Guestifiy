@@ -345,23 +345,24 @@ footer {
     padding-top: 3px !important;
   }
 }
-/* ✅ DESKTOP DEFAULT BACKGROUND */
+/* 💻 Default (Desktop) Background */
 body {
-  background: url('../bg.jpg') no-repeat center center fixed;
+  background-image: url('bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
+  background-attachment: fixed;
   background-color: #000;
-  color: white;
-  min-height: 100vh;
-  backdrop-filter: blur(3px);
 }
 
-/* ✅ MOBILE BACKGROUND (different image, smooth scroll-friendly) */
+/* 📱 Mobile Background */
 @media (max-width: 768px) {
   body {
-    background: url('../bg-mobile.jpg') no-repeat center center;
-    background-size: cover;
-    background-attachment: scroll; /* no fixed to avoid zoom issue */
-    background-color: #000;
+    background-image: url('bg-mobile.jpg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-attachment: scroll !important; /* mobile browsers don't support fixed */
+    background-color: #000 !important;
   }
 }
-
